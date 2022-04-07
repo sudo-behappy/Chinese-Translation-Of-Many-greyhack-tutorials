@@ -11,11 +11,11 @@
 - Pre-Installed Tools
 - Tools from Regular Shop
 - Tools from Hack Shop
-
-## 未完成:
 - Where to Find Shops
 - Hack Shop is empty
 - Where are Hack Tools
+
+## 未完成:
 - Cracking WiFi Networks
 - Required ACKs to Crack WiFi
 - First Mission (Tutorial Mission)
