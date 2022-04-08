@@ -14,10 +14,10 @@
 - Where to Find Shops
 - Hack Shop is empty
 - Where are Hack Tools
-
-## 未完成:
 - Cracking WiFi Networks
 - Required ACKs to Crack WiFi
+## 未完成:
+
 - First Mission (Tutorial Mission)
 - Permission Levels
 - apt-get

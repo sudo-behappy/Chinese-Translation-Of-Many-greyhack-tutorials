@@ -61,14 +61,42 @@ sshcrack, sshguest, shellmail, sshnuke, shellweb, sshescale, ftpnuke, web3xploit
 ---
 ### 入侵工具在哪里
 去到黑客商店并进入**exploits**部分, 你需要用一些游戏自带的破解去进行入侵.
-如果你不知哪里有黑客工具, 参见[老工具](#老工具)
+如果你不知哪里有黑客工具, 参见[老工具](#老工具)(已弃用 -- 译者注)
 如果你还是不知道你需要什么破解工具, 参见[你将需要的工具](#你将需要的工具)
 
 ## 破解wifi密码
+- 打开终端, 输入如下命令
+```
+airmon start wlan0
+```
+- 现在输入如下指令来查看可连接的WiFi
+```
+iwlist wlan0
+```
+- 选一个信号最强的(抓包最快)
+![PWR最大的抓包最快](https://steamuserimages-a.akamaihd.net/ugc/1621849093043096086/65430DC0455C8D02FA6044DB5427F00A6D8B53D7/)
+- 现在像图片中这样输入aireplay命令 
+```
+aireplay -b bssid -e essid
+```
+
+![essid是你想要破解网络的名字, bssid是PWR前一项, 也就是那个以冒号分割的一堆16进制数字](https://steamuserimages-a.akamaihd.net/ugc/1621849093043095087/0D23118DDCE1464626E22E3089AF21234EA930EB/)
+- 当它收集到足够的ack包之后使用**ctrl+c**来停止抓包(所需的ack包参见[WiFi信号强度所对应需要的ack包数量](#WiFi信号强度所对应需要的ack包数量))
+- 现在输入如下指令
+```
+aircrack file.cap
+```
+
+它会告诉你密码
+
+- 现在你可以在右上角输入密码链接WiFi了
 
 ---
 
 ### WiFi信号强度所对应需要的ack包数量
+
+![基本上对于任何WiFi抓10000个ack就行](https://steamuserimages-a.akamaihd.net/ugc/1621849093042628051/73B545AB6AAA0F2131CD6C67C3318E121F9A712A/)
+可能需要比图片所需ack更多的包数量
 
 ---
 
