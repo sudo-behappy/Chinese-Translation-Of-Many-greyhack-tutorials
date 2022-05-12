@@ -6,7 +6,8 @@
 
 如果想贡献, 请使用markdown
 
-## 已完成部分:
+## 已完成部分
+
 - Old Tools
 - Pre-Installed Tools
 - Tools from Regular Shop
@@ -16,12 +17,13 @@
 - Where are Hack Tools
 - Cracking WiFi Networks
 - Required ACKs to Crack WiFi
-## 未完成:
-
 - First Mission (Tutorial Mission)
 - Permission Levels
 - apt-get
 - CHMOD
+
+## 未完成
+
 - HTTP
 - SSH
 - FTP

@@ -1,5 +1,3 @@
-
-
 # 黑客指南(v0.7.4) [原帖](https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308)
 
 关于破解系统, 游戏基础, 提示和游戏小技巧的指南
@@ -12,7 +10,7 @@ sshcrack, sshguest, shellmail, sshnuke, shellweb, sshescale, ftpnuke, web3xploit
 
 ## 你将需要的工具
 
-### 预装工具:
+### 预装工具
 
 - **whois**: 你可以用这个来获取一个服务器拥有者的联系方式和其他信息
 - **nslookup**: 获取一个域名的IP地址
@@ -23,11 +21,13 @@ sshcrack, sshguest, shellmail, sshnuke, shellweb, sshescale, ftpnuke, web3xploit
 - **ping**: 检查远程主机是否可以连接
 
 ### 普通商店的工具
+
 - **nmap**: 获取特定IP的开放端口情况
 - **smtp-user-list**: 获取特定IP在SMTP服务器
 - **ConfigLan**: 用来管理你租的服务器或者配置网络
 
 ### 黑客商店的工具
+
 - **AdminMonitor.exe**: 当管理员上线和开始主动追踪你的时候发出警告. 以防万一, 尽量一直在后台挂着.
 - **decipher**: 用来破解密码
 - **scanlib**: 如果你不想写你自己的破解工具, 不要下载(分析一个库(library), 展示该库的弱点 -- 译者注)
@@ -41,49 +41,66 @@ sshcrack, sshguest, shellmail, sshnuke, shellweb, sshescale, ftpnuke, web3xploit
 ---
 
 ## 商店在哪里
+
 ### 普通商店
+
 - 打开**Browser**, 在搜索框里输入**shop**.
 - 随便找一个网址点进去
 - 你可以找到**nmap**, **smtp-server-list**, **http-server**, **ssh-server**, **ftp-server** 和 **电脑配件**.
 - 你可以在这里租服务器
 ![普通商店](https://steamuserimages-a.akamaihd.net/ugc/1687150124825661688/03777C4D42F193F62A5C13C5053DDAA7BF299C99/)
+
 ### 黑客商店
 
 - 在完成教学任务后你会收到包含黑客商店IP的邮件
 - 如果你没有收到邮件, 并且你在玩线上, 找个玩家问一下(不推荐, 线上的玩家都好坏的 -- 译者注)
 ![黑客商店](https://steamuserimages-a.akamaihd.net/ugc/1687150124825652655/1EFCB624EFBBB837E5C99EB334B414EAC89601D8/)
-----
+
+---
+
 ### 黑客商店是空的
 
 你的打开方式不对. 你需要点**exploits**然后里面是一些预先准备好的工具(新版本需要点libraries的下拉菜单来找到某个漏洞需要的破解 -- 译者注).
-如果你还是不知道你需要什么破解工具, 参见[你需要的工具]()
+如果你还是不知道你需要什么破解工具, 参见[你需要的工具](#你将需要的工具)
 
 ---
+
 ### 入侵工具在哪里
 去到黑客商店并进入**exploits**部分, 你需要用一些游戏自带的破解去进行入侵.
 如果你不知哪里有黑客工具, 参见[老工具](#老工具)(已弃用 -- 译者注)
 如果你还是不知道你需要什么破解工具, 参见[你将需要的工具](#你将需要的工具)
 
 ## 破解wifi密码
+
 - 打开终端, 输入如下命令
-```shell
+
+```bash
 airmon start wlan0
 ```
+
 - 现在输入如下指令来查看可连接的WiFi
-```shell
+
+```bash
 iwlist wlan0
 ```
+
 - 选一个信号最强的(抓包最快)
+
 ![PWR最大的抓包最快](https://steamuserimages-a.akamaihd.net/ugc/1621849093043096086/65430DC0455C8D02FA6044DB5427F00A6D8B53D7/)
-- 现在像图片中这样输入aireplay命令 
-```
+
+- 现在像图片中这样输入aireplay命令
+
+```bash
 aireplay -b bssid -e essid
 ```
 
 ![essid是你想要破解网络的名字, bssid是PWR前一项, 也就是那个以冒号分割的一堆16进制数字](https://steamuserimages-a.akamaihd.net/ugc/1621849093043095087/0D23118DDCE1464626E22E3089AF21234EA930EB/)
+
 - 当它收集到足够的ack包之后使用**ctrl+c**来停止抓包(所需的ack包参见[WiFi信号强度所对应需要的ack包数量](#WiFi信号强度所对应需要的ack包数量))
+
 - 现在输入如下指令
-```
+
+``` bash
 aircrack file.cap
 ```
 
@@ -101,6 +118,7 @@ aircrack file.cap
 ---
 
 ## 第一个任务
+
 (由于原帖中是一个YouTube的视频链接所以说这里采用语言描述的形式来进行指导)
 
 - 把邮件中的decipher下载到本地bin文件夹下(/bin)
@@ -108,7 +126,7 @@ aircrack file.cap
 - 收到邮件后往下翻看到邮件中的IP地址. 拷贝下来.(以下的[IP]都指这个IP)
 - 在命令行中输入.
 
-```shell
+```bash
 whois [IP]
 ```
 
@@ -119,14 +137,15 @@ whois [IP]
 - 如果正确的话, 对方应该会回复密码
 - 执行以下命令:
 
-```shell
+```bash
 nmap [IP]
 ```
 
 来检查IP的开放端口(一般就只有一个ssh)
 
 - 执行以下命令, 用ssh链接服务器
-```shell
+
+```bash
 ssh [name]@[IP]
 ```
 
@@ -135,7 +154,7 @@ ssh [name]@[IP]
 - 如果连接成功的话终端会变色.  
 - 在变色的终端输入
 
-```shell
+```bash
 FileExplorer.exe
 ```
 
@@ -144,7 +163,7 @@ FileExplorer.exe
 - 找到Config文件夹, 把其中的mail.txt拷贝到本地(拖到桌面上)
 - 新打开一个终端, 输入如下命令:
 
-```shell
+```bash
 decipher ./Desktop/Mail.txt
 ```
 
@@ -153,12 +172,15 @@ decipher ./Desktop/Mail.txt
 ---
 
 ## 权限等级
+
 - **Guest**: 就像它的名字一样, 如果你拥有的是guest权限, 你不能访问一些我非常重要的系统文件和文件夹, 并且只能运行特定的命令. 但是你可以访问 **/home/guest**下的文件和一些未经保护的用户文件和文件夹
 - **非root(non-root)**: 一个non-root用户是一个在这台计算机上注册了的用户. 你可以访问你的用户文件夹和其他大多数系统文件夹, 执行大多数命令.
 - **root**: 拿到root权限至关重要. 如果你是root用户, 你可以在机器上为所欲为. 所以说, 如果你想要在被入侵机器上进行你想要的操作, 你必然需要root权限.
+
 ---
 
 ## apt-get
+
 ### 什么是apt-get
 
 **apt-get**是一个包管理器. 它让你能够使用命令行下载程序或运行库.
@@ -167,19 +189,100 @@ decipher ./Desktop/Mail.txt
 你也可以设置你自己的repository,细节参见[如何搭建特定服务器](#如何搭建特定服务器)
 
 ### apt-get相关命令
-**在你开始使用apt下载, 升级或搜索包之前, 永远记住先运行这个命令:**
 
-```shell
+#### **在你开始使用apt下载, 升级或搜索包之前, 永远记住先运行这个命令:**
+
+```bash
 sudo apt-get update
 ```
 
+#### 如果你想要升级你的系统或安装的包, 使用这个
 
+```bash
+sudo apt-get upgrade
+```
+
+#### 使用这个来下载
+
+```bash
+sudo apt-get install [package or lib name]
+```
+
+使用例:
+
+```bash
+sudo apt-get install init.so
+```
+
+#### 使用这个来搜索包
+
+```bash
+sudo apt-get search [package or lib name]
+```
+
+使用例:
+
+```bash
+sudo apt-get search kernel
+```
+
+#### 使用这个来查看某个repository的所有包
+
+```bash
+sudo apt-get show [address]
+```
+
+使用例:
+
+```bash
+sudo apt-get show 182.182.9.21
+```
+
+#### 使用这个来添加一个repository
+
+```bash
+sudo apt-get addrepo [address]
+```
+
+使用例:
+
+```bash
+sudo apt-get addrepo 182.182.9.21
+```
+
+#### **注意: 在在线模式中添加其他玩家的repo时请小心**
 
 ---
 
-## CHMOD
+## CHMOD速查表
 
-### 例子
+|||
+|-|-|
+|+|添加权限|
+|-|移除权限|
+|-R|应用到子文件|
+|u|用户(拥有者)|
+|g|组|
+|o|其他人和游客|
+|r|读|
+|w|写|
+|x|执行|
+
+永远使用sudo运行该命令
+
+### 使用例
+
+移除拥有者的读权限
+
+```bash
+chmod u-r /home/user/document.txt
+```
+
+向除了拥有者所有人(包括)给予写入和执行权限, 并应用到所有子文件夹和文件
+
+```bash
+sudo chmod -R o+wx /home/user/myfolder
+```
 
 ---
 
