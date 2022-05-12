@@ -66,11 +66,11 @@ sshcrack, sshguest, shellmail, sshnuke, shellweb, sshescale, ftpnuke, web3xploit
 
 ## 破解wifi密码
 - 打开终端, 输入如下命令
-```
+```shell
 airmon start wlan0
 ```
 - 现在输入如下指令来查看可连接的WiFi
-```
+```shell
 iwlist wlan0
 ```
 - 选一个信号最强的(抓包最快)
@@ -103,110 +103,77 @@ aircrack file.cap
 ## 第一个任务
 (由于原帖中是一个YouTube的视频链接所以说这里采用语言描述的形式来进行指导)
 
-  
-  
-  
-
 - 把邮件中的decipher下载到本地bin文件夹下(/bin)
-
-  
-
 - 在普通商店中下载nmap, 下载到本地bin文件夹下
-
-  
-
 - 收到邮件后往下翻看到邮件中的IP地址. 拷贝下来.(以下的[IP]都指这个IP)
-
-  
-
 - 在命令行中输入.
 
-```
-
+```shell
 whois [IP]
-
 ```
 
 来获取IP地址的管理员的信息, 记住其中的"name".
 
-  
-
 - 给邮件中的邮箱地址发消息, 在social engineering中找到"administrative Action(行政行为)".
-
-  
-
 - 按照提示给的空档填入即可(administrator name 用之前whois获得的name, 第一个名字用邮件中提供的名字)
-
-  
-
 - 如果正确的话, 对方应该会回复密码
-
-  
-
 - 执行以下命令:
 
-```
-
+```shell
 nmap [IP]
-
 ```
 
 来检查IP的开放端口(一般就只有一个ssh)
 
-  
-
 - 执行以下命令, 用ssh链接服务器
-
-```
-
+```shell
 ssh [name]@[IP]
-
 ```
 
-其中[name]是邮箱@符号前面的名字
+其中\[name\]是邮箱@符号前面的名字
 
-  
-
-- 如果连接成功的话终端会变色.
-
-  
-
+- 如果连接成功的话终端会变色.  
 - 在变色的终端输入
 
-```
-
+```shell
 FileExplorer.exe
-
 ```
 
 来打开图形化的文件管理器
 
-  
-
 - 找到Config文件夹, 把其中的mail.txt拷贝到本地(拖到桌面上)
-
-  
-
 - 新打开一个终端, 输入如下命令:
 
-```
-
+```shell
 decipher ./Desktop/Mail.txt
-
 ```
-
-  
 
 - 等进度条走完, 给原邮件回复获取到的密码, 他会给你回复一个IP, 即黑客商店的IP
 
 ---
 
 ## 权限等级
-
+- **Guest**: 就像它的名字一样, 如果你拥有的是guest权限, 你不能访问一些我非常重要的系统文件和文件夹, 并且只能运行特定的命令. 但是你可以访问 **/home/guest**下的文件和一些未经保护的用户文件和文件夹
+- **非root(non-root)**: 一个non-root用户是一个在这台计算机上注册了的用户. 你可以访问你的用户文件夹和其他大多数系统文件夹, 执行大多数命令.
+- **root**: 拿到root权限至关重要. 如果你是root用户, 你可以在机器上为所欲为. 所以说, 如果你想要在被入侵机器上进行你想要的操作, 你必然需要root权限.
 ---
 
 ## apt-get
 ### 什么是apt-get
+
+**apt-get**是一个包管理器. 它让你能够使用命令行下载程序或运行库.
+官方的repository默认被开启.
+你也可以把黑客商店作为repository添加.
+你也可以设置你自己的repository,细节参见[如何搭建特定服务器](#如何搭建特定服务器)
+
+### apt-get相关命令
+**在你开始使用apt下载, 升级或搜索包之前, 永远记住先运行这个命令:**
+
+```shell
+sudo apt-get update
+```
+
+
 
 ---
 
