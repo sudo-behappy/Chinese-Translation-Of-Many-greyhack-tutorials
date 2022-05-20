@@ -288,21 +288,50 @@ sudo chmod -R o+wx /home/user/myfolder
 
 ## HTTP
 
+- 你需要**libhttp**的破解来破解http服务
+- **你需要获得shell来进行连接**
+- 如果描述说的是"get access to a shell", 那么就可以用来连接
+
 ### 样例破解
+
+![HTTP](https://steamuserimages-a.akamaihd.net/ugc/1689400601812710752/5CCBE55458F097DBC71C0741B2BA94FD2E9D442D/)
 
 ---
 
 ## SSH
 
+- 你需**libssh**来破解ssh服务
+- 如果你知道用户名和密码, 你可以通过ssh连接. 你也可以用提供shell access的破解来建立连接
+- 阅读在hackshop中的描述. 如果它提到了"获取shell", 那么你就可以用它来连接. 或者如果你知道用户名和密码，你就可以使用ssh直接连接.
+
 ### 样例破解
+
+![SSH](https://steamuserimages-a.akamaihd.net/ugc/1689400601812710752/5CCBE55458F097DBC71C0741B2BA94FD2E9D442D/)
 
 ---
 
 ## FTP
 
+- 你需要libftp漏洞来入侵一个ftp服务
+- 如果你知道用户名和密码，可以使用ftp命令来连接. 你也可以使用提供shell权限的漏洞来连接.
+- 阅读在hackshop中的描述. 如果它提到了"获取shell", 那么你就可以用它来连接. 或者如果你知道用户名和密码，你就可以使用ftp直接连接.
+
 ### 样例破解
 
+![FTP](https://steamuserimages-a.akamaihd.net/ugc/1689400601812710752/5CCBE55458F097DBC71C0741B2BA94FD2E9D442D/)
+
 ---
+
+## SMTP
+
+- 你需要libsmtp漏洞来入侵smtp服务
+- 使用smtp-user-list来获取机器的用户列表
+- 你需要获取shell来连接
+- 阅读黑客商店的漏洞描述. 如果它说获得访问shell的权限，就可以用来连接
+
+### 样例破解
+
+![SMTP](https://steamuserimages-a.akamaihd.net/ugc/1689400601812710752/5CCBE55458F097DBC71C0741B2BA94FD2E9D442D/)
 
 ## 聊天室(chat room)
 
@@ -366,6 +395,39 @@ sudo chmod -R o+wx /home/user/myfolder
 ---
 
 ## 如何远程入侵
+
+使用**nmap**, 查看结果
+![nmap结果](https://steamuserimages-a.akamaihd.net/ugc/762725004928068190/1BD1B02B2095C542459B7085D81D2118B5471860/)
+
+你可以看到**服务名称(service)** 和 **版本号(version)**
+
+前往**黑客商店**, 点击**破解(exploits)**:
+![黑客商店](https://steamuserimages-a.akamaihd.net/ugc/762725004928083995/C1EEEDB46C57E716B85352F65A29DEF231E2837C/)
+
+- 在下拉菜单中选择**服务对应的库(library name)**, 输入版本号, 点击搜索.
+- 在出现的破解中选一个, 读一读描述. 你就会知道这个破解能够干什么, 需要什么样的先决条件.
+- 下载其中一个并运行
+
+### 如果你不知道选哪一个, 参见前文对应的服务名
+
+### 如果先决条件没有被满足, 破解不会生效
+
+### 如果破解没有生效
+- 换一个破解
+- 尝试其他端口
+- 如果你收到了用户/管理员在线(active user/root)的警告, 尝试社会工程学让他们上线
+- 如果你收到了破解版本不符(**mismatched version numbers**)的警告, 尝试另外一破解
+- 如果没有端口开放, 尝试使用路由器(router)破解.
+- 还是不行的话, 换个任务或者换个目标去入侵
+
+### 如果你黑入了远程机器, 参见[如何本地入侵](#如何本地入侵)
+
+### 如果你尝试获得了一个非root用户的密码:
+- 确定你连接到了远程服务器且拥有shell. 如果你没有连接, 参见[如何连接](#如何连接)
+- 如果你是guest, 使用**sudo -u**来切换用户或者**sudo -s**来成为root.
+- 如果你是非root用户, 使用**sudo -s**来成为root
+
+### 你必须清除你的log. 如果你不知道怎么清除log, 参见[如何清除记录(log)](#如何清除记录(log))
 
 ---
 
@@ -480,3 +542,20 @@ ___
 ## 如何使用自定义壁纸
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

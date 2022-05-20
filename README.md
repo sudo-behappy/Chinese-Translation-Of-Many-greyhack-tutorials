@@ -21,13 +21,16 @@
 - Permission Levels
 - apt-get
 - CHMOD
-
-## 未完成
-
 - HTTP
 - SSH
 - FTP
 - SMTP
+
+- How to Hack (Remote Hack)
+
+## 未完成
+
+
 - CHAT ROOMS
 - CLOSED PORTS
 - WEB CAMS / SECURITY CAMS
@@ -39,7 +42,7 @@
 - Local Libraries
 - Local Exploits
 - How to Find Version Number of a Library
-- How to Hack (Remote Hack)
+
 - How to Hack (Local Hack)
 - How to Hack Other Devices in Network
 - How to Connect
