@@ -25,11 +25,18 @@
 - SSH
 - FTP
 - SMTP
-
+[1]
+- Local Libraries
+- Local Exploits
+- How to Find Version Number of a Library
 - How to Hack (Remote Hack)
+- How to Hack (Local Hack)
+[2]
+- How to Find Names and E-Mails for Social Engineering
 
 ## 未完成
 
+[1]
 
 - CHAT ROOMS
 - CLOSED PORTS
@@ -39,17 +46,19 @@
 - NO PORTS
 - ROUTERS
 - FIREWALLS
-- Local Libraries
-- Local Exploits
-- How to Find Version Number of a Library
 
-- How to Hack (Local Hack)
+[1]
+
+[2]
+
 - How to Hack Other Devices in Network
 - How to Connect
 - How to Complete Missions
 - Hidden Missions - Where to Find Hidden Missions
 - Social Engineering
-- How to Find Names and E-Mails for Social Engineering
+
+[2]
+
 - How to Get Root
 - How to Switch User or Login as Another User
 - How to Hack Bank Accounts

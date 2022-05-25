@@ -383,14 +383,42 @@ sudo chmod -R o+wx /home/user/myfolder
 
 ## 本地库(local libraries)
 
+- 默认的本地库有:
+    - kernal_module.so
+    - net.so
+    - init.so
+- 在hackshop中, 本地库的名字对应着相应的破解
+- 如果你不知道版本号, 参见[如何确定库的版本号](#如何确定库的版本号)
 
 ---
 
 ### 本地破解
 
+去到hackshop, 点击Exploits
+![这个](https://steamuserimages-a.akamaihd.net/ugc/1679240811890707436/B06DC1EC47FE2790C48FED0E8A19D6307261603E/)
+
+- 选择一个本地库, 输入版本号来搜索.
+- 找一个破解, 阅读描述
+    - 如果你不知道找哪些库, 参见![本地库(local libraries)](#本地库local-libraries)
+- 参见 "[如何本地入侵](#如何本地入侵)"
+
 ---
 
 ## 如何确定库的版本号
+
+- 社工
+- 如果你不知道社工的名字或者邮箱, 参见[如何找到社工所需的名字和邮箱](#如何找到社工所需的名字和邮箱)
+- 如果你想要知道你的版本号, 使用如下代码(复制到codeeditor中, 编译, 存储到home文件夹, 运行):
+
+```js
+metaxploit = include_lib("/lib/metaxploit.so")
+if not metaxploit then metaxploit = include_lib(get_shell.host_computer.current_path+"/metaxploit.so")
+if not metaxploit then exit("Can't find metaxploit.so in /lib folder or current folder.")
+if params.len == 0 then exit("You have to specify full path.\nTarget file must be library.\nusage: "+program_path.split("/")[-1]+" /folder/filename.so")
+lib = metaxploit.load(params[0])
+if not lib then exit("You have to specify full path.\nTarget file must be library.\nusage: "+program_path.split("/")[-1]+" /folder/filename.so")
+print(lib.lib_name+" = "+lib.version)
+```
 
 ---
 
@@ -413,6 +441,7 @@ sudo chmod -R o+wx /home/user/myfolder
 ### 如果先决条件没有被满足, 破解不会生效
 
 ### 如果破解没有生效
+
 - 换一个破解
 - 尝试其他端口
 - 如果你收到了用户/管理员在线(active user/root)的警告, 尝试社会工程学让他们上线
@@ -422,7 +451,8 @@ sudo chmod -R o+wx /home/user/myfolder
 
 ### 如果你黑入了远程机器, 参见[如何本地入侵](#如何本地入侵)
 
-### 如果你尝试获得了一个非root用户的密码:
+### 如果你尝试获得了一个非root用户的密码
+
 - 确定你连接到了远程服务器且拥有shell. 如果你没有连接, 参见[如何连接](#如何连接)
 - 如果你是guest, 使用**sudo -u**来切换用户或者**sudo -s**来成为root.
 - 如果你是非root用户, 使用**sudo -s**来成为root
@@ -432,6 +462,26 @@ sudo chmod -R o+wx /home/user/myfolder
 ---
 
 ## 如何本地入侵
+
+如果你拿到了shell, 但不是root用户...
+
+- 找一个本地破解(local exploit)
+    - 如果你不知道在哪里找, 参见[本地破解](#本地破解)
+- 确定你已经拿到了shell
+- 在你找本地破解之前, 利用社工来获得本地 **kernal_module.so, init.so, net.so**库的版本号
+    - 社工邮件标题选择 **"system information"**
+- 如果你不知道如何找到社工所需的邮件, 参见[如何找到社工所需的名字和邮箱](#如何找到社工所需的名字和邮箱)
+- 从hackshop找一个kernal_module, init或net库的破解
+    - 优先选择给root权限的, 如果没有, 选择给非root用户权限的
+- 在你连接的机器上, 运行Browser.exe来下载破解, 或者从你的电脑上传到远程的/home/guest目录下
+- 如果收到了缺失metaxploit.so或者crypto.so, 从你的电脑的/lib下找到他们并放到你破解的目录下
+- 如果你改动了一个用户的密码, 你可以使用`sudo -u`来切换到那个用户
+- 如果你获得了一个用户的权限, 把/etc/passwd拷贝到本地, 用`decipher`破解, 然后`sudo -s`变为root权限
+- 你可以使用`scp -d`来下载文件, 或者是使用图形化的FileExplorer.exe(没人会用scp的 -- 译者注)
+- 如果你通过ftp连接, 通过`get /etc/passwd`来下载密码文件
+- 如果你获得了root密码, 运行`sudo -s`
+
+### 你使用破解重设的密码的用户名会出现在终端的运行结果中
 
 ---
 
@@ -461,7 +511,14 @@ sudo chmod -R o+wx /home/user/myfolder
 
 ## 如何找到社工所需的名字和邮箱
 
-___
+- 如果服务器存在EmployeesViewer.exe, 你可以用它来查看邮箱.
+- 如果你已经拿到了shell, 查看/home文件夹来找名字
+- 如果你没办法查看home文件夹, 使用`ls /home`来查看
+- 在/home/\[用户名\]/config文件夹中会有邮箱(Mail.txt)
+- 如果你没办法查看home文件夹, 使用`cat /home/[用户名]/Config/Mail.txt`来查看
+- 如果SMTP服务在运行, 你可以使用`smtp-user-list`来查看邮箱
+
+---
 
 ## 如何获取root(管理员)权限
 
