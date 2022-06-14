@@ -1,9 +1,11 @@
-
 一个grey hack的教程, Hacker's Handbook, 的中文翻译, 原作者: onikidokuz
+
+感谢@creating3的帮助
 
 [原帖传送门](https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308)
 
 ## 自用翻译
+
 ### 已完成
 
 
@@ -26,12 +28,10 @@
 - SSH
 - FTP
 - SMTP
-[1]
 - Local Libraries
 - Local Exploits
 - How to Find Version Number of a Library
 - How to Hack (Remote Hack)
 - How to Hack (Local Hack)
-[2]
 - How to Find Names and E-Mails for Social Engineering
 
