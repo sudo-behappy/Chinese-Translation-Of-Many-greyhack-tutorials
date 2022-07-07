@@ -4,3 +4,5 @@
 *.css
 .obsidian/plugins/obsidian-pandoc/main.js
 *.js
+
+.vscode

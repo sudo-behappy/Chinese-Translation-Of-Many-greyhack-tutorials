@@ -1,37 +1,22 @@
-一个grey hack的教程, Hacker's Handbook, 的中文翻译, 原作者: onikidokuz
 
-感谢@creating3的帮助
+# 一个拥有很多(目前: 2)grey hack教程中文翻译的repo
 
-[原帖传送门](https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308)
+如果想要contribute, 请联系:
 
-## 自用翻译
+QQ: 3216539984
 
-### 已完成
+telegram: @sudo behappy
 
+感谢
 
-## 上一位完成部分
+@creating3
 
-- Old Tools
-- Pre-Installed Tools
-- Tools from Regular Shop
-- Tools from Hack Shop
-- Where to Find Shops
-- Hack Shop is empty
-- Where are Hack Tools
-- Cracking WiFi Networks
-- Required ACKs to Crack WiFi
-- First Mission (Tutorial Mission)
-- Permission Levels
-- apt-get
-- CHMOD
-- HTTP
-- SSH
-- FTP
-- SMTP
-- Local Libraries
-- Local Exploits
-- How to Find Version Number of a Library
-- How to Hack (Remote Hack)
-- How to Hack (Local Hack)
-- How to Find Names and E-Mails for Social Engineering
+的大力协助
 
+## 已翻译完成的教程
+
+[Hacker's Handbook by onikidokuz](https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308)
+
+## 待翻译的教程
+
+[SUPERUSER GUIDE 0.7.2585a](https://steamcommunity.com/sharedfiles/filedetails/?id=1362464998)
