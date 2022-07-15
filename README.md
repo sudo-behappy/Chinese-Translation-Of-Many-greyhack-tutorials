@@ -16,10 +16,11 @@ telegram: @sudo behappy
 ## 已翻译完成的教程
 
 [Hacker's Handbook by onikidokuz](https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308)
+[SUPERUSER GUIDE 0.7.2585a by DrDerpenstein](https://steamcommunity.com/sharedfiles/filedetails/?id=1362464998)
 
 ## 待翻译的教程
 
-[SUPERUSER GUIDE 0.7.2585a by DrDerpenstein](https://steamcommunity.com/sharedfiles/filedetails/?id=1362464998)
+准备翻译<https://codedocs.ghtools.xyz/>
 
 Buy me a coffee:
 
