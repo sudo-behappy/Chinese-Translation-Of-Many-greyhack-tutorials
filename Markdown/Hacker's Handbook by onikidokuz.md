@@ -1,5 +1,7 @@
 # 黑客指南(游戏版本v0.7.4) [原帖](https://steamcommunity.com/sharedfiles/filedetails/?id=1905138308)
 
+by onikidokuz
+
 关于破解系统, 游戏基础, 提示和游戏小技巧的指南
 
 ## 老工具
