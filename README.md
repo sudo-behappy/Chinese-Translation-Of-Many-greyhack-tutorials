@@ -5,8 +5,6 @@
 
 QQ: 3216539984
 
-telegram: @sudo behappy
-
 感谢
 
 @creating3
